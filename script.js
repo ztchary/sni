@@ -11,7 +11,7 @@ window.onload = e=>{
     let files = e.dataTransfer.files
     let reader = new FileReader()
     reader.onload = async function(e) {
-      let data = new Uint8Array(e.target.data)
+      let data = new Uint8Array(e.target.result)
       let data32 = new Uint32Array(data.slice(0, 8).buffer)
       if (data32[0] != 558452307) {
         alert("terrible")
